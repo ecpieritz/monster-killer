@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!--Import Vue-->
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+   <!--Import Style-->
+   <link rel="stylesheet" href="./style.css">
+
+   <title>The monster killer</title>
+</head>
+
+<body>
+   <header>
+      <div id="socials" class="flex-row">
+         <div id="madeWith" class="flex-row">
+            <h5>Made with</h5>
+            <img src="./img/heart.svg" alt="love" id="heart">
+         </div>
+
+         <div>
+            <a href="https://www.linkedin.com/in/ecpieritz/" target="_blank"><img src="./img/linkedin.svg"
+                  alt="linkedin"></a>
+            <a href="https://github.com/EPieritz" target="_blank"><img src="./img/github.svg" alt="github"></a>
+         </div>
+      </div>
+
+      <div id="monsterKiller" class="flex-row">
+         <img src="./img/knight.svg" alt="Knight" id="knight">
+         <h1>THE MONSTER KILLER</h1>
+         <img src="./img/orc.svg" alt="Monster" id="monster">
+      </div>
+   </header>
+
+   <div id="app" class="flex-column">
+      <div class="panel scores">
+         <div class="score flex-column">
+            <h2>Player</h2>
+            <div class="life-bar">
+               <div class="life" :class="{danger: playerLife < 20}" :style="{width: playerLife + '%'}">
+               </div>
+            </div>
+            <div>{{playerLife}}%</div>
+         </div>
+
+         <div class="score flex-column">
+            <h2>Monster</h2>
+            <div class="life-bar">
+               <div class="life" :class="{danger: monsterLife < 20}" :style="{width: monsterLife + '%'}">
+               </div>
+            </div>
+            <div>{{monsterLife}}%</div>
+         </div>
+      </div>
+
+      <div class="panel result" v-if="hasResult">
+         <div class="greenText" v-if="monsterLife == 0">You won!!! :)</div>
+
+         <div class="redText" v-else> You lose!!! :(</div>
+      </div>
+
+      <div class="panel buttons flex-row">
+         <template v-if="running">
+            <button class="btn red" @click="attack(false)">Attack</button>
+            <button class="btn yellow" @click="attack(true)">Special Attack</button>
+            <button class="btn green" @click="healAndHurt">Heal</button>
+            <button class="btn black" @click="running = false">Give Up</button>
+         </template>
+
+         <button v-else @click="startGame" class="btn darkBlue">New Game</button>
+      </div>
+
+      <div class="panel logs" v-if="logs.length">
+         <ul class="flex-column">
+            <li class="log" v-for="log in logs" :class="log.cls">{{log.text}}</li>
+         </ul>
+      </div>
+   </div>
+
+   <!--Import Script-->
+   <script src="./app.js"></script>
+</body>
+
+</html>

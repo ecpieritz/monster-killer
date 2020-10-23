@@ -1,0 +1,301 @@
+/* Import "Open Sans" font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+/*Import "Press Start" font*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root{
+   --black: #000000;
+   --gray: #707070;
+   --lightGray: #c5c2c2;
+   --white: #ffffff;
+   --darkBlue: #124474;
+   --blue: #0969cf;
+   --green: #5eaf9c;
+   --red: #f66b6b;
+   --yellow: #e9a503;
+}
+
+body{
+   margin: 0;
+   padding: 0;
+   background: var(--white);
+   color: var(--black);
+   font-family: 'Open Sans', sans-serif;
+}
+
+.panel{
+   background: var(--gray);
+   color: var(--white);
+   margin: 0 3vw 2vw 3vw;
+   padding: 3vw;
+   box-shadow: 0 1vw 2vw var(--black);
+   border-radius: 1vw;
+}
+
+.flex-row{
+   display: flex;
+   flex-direction: row;
+}
+
+.flex-column{
+   display: flex;
+   flex-direction: column;
+}
+
+/*Header Styles*/
+header{
+   margin: 0;
+   background: var(--darkBlue);
+   padding: 1vw;
+   margin-bottom: 2vw;
+}
+
+header h1{
+   font-family: 'Press Start 2P', cursive;
+}
+
+#socials{
+   justify-content: space-between;
+   align-items: center;
+   margin-top: -1vw;
+}
+
+#socials img{
+   height: 1.5vw;
+}
+
+#socials img:first-child{
+   margin-right: 1.5vw ;
+}
+
+#socials #madeWith {
+   align-items: center;
+   color: var(--white);
+}
+#socials #madeWith img{
+   height: 1vw;
+   margin-left: 0.5vw;
+}
+
+#monsterKiller{
+   align-items: center;
+   justify-content: space-between;
+}
+
+#monsterKiller h1{
+   font-size: 3vw;
+   color: var(--yellow);
+}
+
+#monsterKiller img{
+   height: 10vw;
+}
+
+#monster{
+margin-right: 5vw;
+}
+
+#knight{
+   margin-left: 5vw;
+}
+
+/*Panel score style*/
+.scores{
+   padding: 0 3vw 3vw 3vw;
+   display: flex;
+}
+
+.score{
+   flex:1;
+   justify-content: center;
+   align-items: center;
+}
+
+.score h2{
+   font-weight: 400;
+}
+
+.life-bar{
+   background: var(--black);
+   width: 80%;
+   height: 4vw;
+   border: 2px solid var(--black);
+   margin-bottom: 1vw;
+}
+
+.life-bar .life{
+   background: var(--green);
+   display: flex;
+   justify-content: center;
+   height: 100%;
+}
+
+.life-bar .life.danger{
+   background: var(--red);
+}
+
+/*Panel result style*/
+.result{
+   display: flex;
+   justify-content: center;
+   font-weight: 800;
+   font-size: x-large;
+}
+
+.greenText{
+   color: var(--green);
+}
+
+.redText{
+   color: var(--red);
+}
+
+/*Buttons panel style*/
+.green{
+   background: var(--green);
+}
+
+.red{
+   background: var(--red);
+}
+
+.yellow{
+   background: var(--yellow);
+}
+
+.darkBlue{
+   background: var(--darkBlue);
+}
+
+.black{
+   background: var(--black);
+}
+
+.buttons{
+   display: flex;
+   justify-content: center;
+}
+
+.btn{
+   color: var(--white);
+   margin: 0 1.5vw;
+   padding: 1vw 3vw;
+   border: none;
+   border-radius: 10vw;
+   text-transform: uppercase;
+   font-weight: 600;
+}
+
+.btn:hover{
+   cursor: pointer;
+   animation: pulse 3s;
+   box-shadow: 0 0 2vw 1vw var(--white);
+   color: var(--lightGray);
+}
+
+/*Log panel style*/
+.logs ul{
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+.logs ul li{
+   display: flex;
+   justify-content: center;
+   margin: 1vw 0;
+   padding: 0.5vw 0;
+   font-weight: 600;
+   font-size: large;
+   text-transform: uppercase;
+   border-radius: 2vw;
+}
+
+.player{
+   background: var(--blue);
+}
+
+.monster{
+   background: var(--red);
+}
+.heal{
+   background: var(--yellow);
+}
+
+@media(max-width:860px){
+   /*Header Styles*/
+   header{
+      padding: 0 3vw 2vw 3vw;
+      margin-bottom: 5vw;
+   }
+   
+   #socials{
+      margin-bottom: -1vw;
+   }
+
+   #socials img{
+      height: 3vw;
+   }
+
+   #socials #madeWith img{
+      height: 2vw;
+      margin-left: 1vw;
+   }
+  
+   #monsterKiller h1{
+      font-size: 3vw;
+   }
+   
+   #monsterKiller img{
+      height: 15vw;
+   }
+   
+   #monster{
+   margin-right: 0;
+   }
+   
+   #knight{
+      margin-left: 0;
+   }
+
+   .panel{
+      margin: 0 3vw 3vw 3vw;
+   }
+}
+
+@media(min-width:860px){
+   .panel{
+      box-shadow: 0 8px 15px var(--black);
+   }
+      
+   .scores{
+      padding: 0 3px 25px 3px;
+   }
+
+   .life-bar{
+      height: 25px;
+      margin-bottom: 15px;
+   }
+
+   .btn{
+      margin-top: -25px;
+      margin-bottom: -25px;
+      font-size: larger;
+   }
+
+   .btn:hover{
+   box-shadow: 0 0 15px 5px var(--white);
+   }
+
+   .result{
+      padding: 25px;
+   }
+
+   .logs ul {
+      margin-top: -35px;
+      margin-bottom: -35px;
+   }
+   .logs ul li{
+      margin: 8px 0;
+   }
+}
