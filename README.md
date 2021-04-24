@@ -2,7 +2,7 @@
 
 ## 🖥 Preview
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/ecpieritz/monster-killer/main/img/monster-killer-print.png" width = "700">
+  <img src = "https://raw.githubusercontent.com/ecpieritz/monster-killer/main/img/monster-killer-print.png" width = "800">
 </p>
 
 ---
