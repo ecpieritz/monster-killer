@@ -23,7 +23,7 @@
 
 ## 🚀 How to execute the project
 #### Clone the repository
-git clone https://github.com/EPieritz/monster-killer.git
+git clone https://github.com/ecpieritz/monster-killer.git
 
 #### Enter directory
 `cd monster-killer`
